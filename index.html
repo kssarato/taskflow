@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TaskFlow – To-Do App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <header class="header">
+      <div class="header-top">
+        <h1 class="logo">TaskFlow</h1>
+        <span class="date" id="currentDate"></span>
+      </div>
+      <p class="subtitle">Stay focused. Get it done.</p>
+    </header>
+
+    <section class="input-section">
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="Add a new task..."
+          maxlength="100"
+        />
+        <select id="prioritySelect" class="priority-select">
+          <option value="low">🟢 Low</option>
+          <option value="medium" selected>🟡 Medium</option>
+          <option value="high">🔴 High</option>
+        </select>
+        <button class="add-btn" id="addBtn">Add</button>
+      </div>
+    </section>
+
+    <section class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+    </section>
+
+    <section class="task-list-section">
+      <ul class="task-list" id="taskList">
+        <!-- Tasks rendered by JS -->
+      </ul>
+      <div class="empty-state" id="emptyState">
+        <span class="empty-icon">✦</span>
+        <p>No tasks here. Add one above!</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="taskCount">0 tasks left</span>
+      <button class="clear-btn" id="clearCompleted">Clear completed</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
